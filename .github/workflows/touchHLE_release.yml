@@ -1,4 +1,4 @@
-name: Build touchHLE
+name: Spore bulid
 
 on:
   push:
@@ -109,7 +109,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: touchHLE_Android_AArch64
-        path: touchHLE.apk
+        path: touchHLEAndroid.apk
 
   build-win:
 
