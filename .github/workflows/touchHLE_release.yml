@@ -1,4 +1,4 @@
-name: Build touchHLE
+name: android 32 bits bulid
 
 on:
   push:
@@ -81,8 +81,8 @@ jobs:
     - if: ${{ steps.cache-boost.outputs.cache-hit != 'true' }}
       name: Extract Boost
       run: 7z -ovendor x boost_1_81_0.7z && mv vendor/boost_1_81_0 vendor/boost
-    - name: Install AArch64 Android Rust toolchain
-      run: rustup target add aarch64-linux-android
+    - name: Install AArch32 Android Rust toolchain
+      run: rustup target add aarch32-linux-android
     - name: Install cargo-ndk
       run: cargo install cargo-ndk
     # Gradle version compatibility is a nightmare and we refuse to use gradlew.
@@ -108,7 +108,7 @@ jobs:
       run: cd android && ../gradle/gradle-7.3/bin/gradle assembleRelease && mv app/build/outputs/apk/release/app-release.apk ../touchHLE.apk
     - uses: actions/upload-artifact@v3
       with:
-        name: touchHLE_Android_AArch64
+        name: touchHLE_Android_AArch32
         path: touchHLE.apk
 
   build-win:
