@@ -28,7 +28,7 @@ jobs:
       with:
         path: vendor/boost
         key: boost_1_81_0
-    - if: ${{ steps.cache-boost.outputs.cache-hit != 'false' }}
+    - if: ${{ steps.cache-boost.outputs.cache-hit != 'true' }}
       name: Download Boost
       run: curl -L -o boost_1_81_0.7z "https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.7z"
     - if: ${{ steps.cache-boost.outputs.cache-hit != 'true' }}
