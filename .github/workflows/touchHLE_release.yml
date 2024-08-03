@@ -1,4 +1,4 @@
-name: Build touchHLE
+name: Build Chuck Norris 
 
 on:
   push:
