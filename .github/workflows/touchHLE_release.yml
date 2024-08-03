@@ -1,10 +1,10 @@
-name: onlyandroidbulid
+name: Androidbulid
 
 on:
   push:
-    branches: [ "trunk" ]
+    branches: [ "Androidbulid" ]
   pull_request:
-    branches: [ "trunk" ]
+    branches: [ "Androidbulid" ]
 
 env:
   CARGO_TERM_COLOR: never
